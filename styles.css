@@ -1,0 +1,169 @@
+:root {
+  --clr-soft-blue: hsl(215, 51%, 70%);
+  --clr-cyan: hsl(178, 100%, 50%);
+  --clr-dark-blue-main: hsl(217, 54%, 11%);
+  --clr-dark-blue-card: hsl(216, 50%, 16%);
+  --clr-dark-blue-line: hsl(215, 32%, 27%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+
+  --fs-normal: 18px;
+
+  --ff-outfit: "Outfit", serif;
+}
+
+body {
+  background-color: var(--clr-dark-blue-main);
+  color: var(--clr-soft-blue);
+  font-family: var(--ff-outfit);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--fw-300);
+  line-height: 1.6rem;
+  opacity: 0.75;
+}
+
+h1 {
+  color: var(--clr-white);
+  font-size: 1.4rem;
+  margin: 1.4rem 0 0.5rem 0;
+  font-weight: var(--fw-600);
+}
+
+h1:hover {
+  color: var(--clr-cyan);
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.medium-gap {
+  gap: 0.75rem;
+}
+
+.small-gap {
+  gap: 0.5rem;
+}
+
+.card {
+  background-color: var(--clr-dark-blue-card);
+  max-width: 18rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+}
+
+.details-container {
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.creator-container {
+  margin-top: 1rem;
+  font-weight: var(--fw-400);
+}
+
+.img-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Ensure the overlay doesn't go outside the container */
+  border-radius: 1rem;
+}
+
+.crypto-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.svg-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transform: scale(0.2);
+}
+
+.img-container img {
+  display: block;
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+}
+
+.img-container:hover .svg-mask {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(178, 100%, 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-container:hover::after {
+  opacity: 0.5; /* Adjust the opacity for desired effect */
+  cursor: pointer;
+}
+
+.crypto-text {
+  color: var(--clr-cyan);
+  font-weight: var(--fw-600);
+  font-size: 0.9rem;
+}
+
+.time-text {
+  font-weight: var(--fw-600);
+  font-size: 0.9rem;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.headshot {
+  width: 2rem;
+  height: auto;
+  border: 1px solid var(--clr-white);
+  border-radius: 50%;
+}
+
+hr {
+  border-color: var(--clr-soft-blue);
+  border-width: 0.001rem;
+  opacity: 0.25;
+}
+
+.text-content p {
+  opacity: 0.75;
+}
+
+#creator {
+  color: var(--clr-white);
+}
+
+#creator:hover {
+  cursor: pointer;
+  color: var(--clr-cyan);
+}
